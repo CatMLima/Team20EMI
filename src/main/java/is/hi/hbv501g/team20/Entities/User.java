@@ -2,6 +2,7 @@ package is.hi.hbv501g.team20.Entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -25,7 +26,7 @@ public class User {
     public User() {
     }
 
-    public User(UUID id, String username, String email, String name, String password, list<StudyActivity> activities) {
+    public User(UUID id, String username, String email, String name, String password, List<StudyActivity> activities) {
         this.id = id;
         this.username = username;
         this.email = email;
