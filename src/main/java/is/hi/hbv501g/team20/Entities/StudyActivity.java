@@ -46,6 +46,7 @@ public class StudyActivity {
     public StudyActivity() {
     }
 
+    //bing bop
     public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image picture, String description, User user) {
         this.id = id;
         this.date = date;
