@@ -36,7 +36,7 @@ public class StudyActivity {
     @OneToOne(cascade = CascadeType.ALL)
     //Cascade means that if you delete the study activity then the image will also be deleted
     @JoinColumn(name = "user_id")
-    private Image image;
+    private Image picture;
 
     @ManyToOne //one user can have many study activities.
     @JoinColumn(name = "user_id")
@@ -46,14 +46,14 @@ public class StudyActivity {
     public StudyActivity() {
     }
 
-    public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image image, String description, User user) {
+    public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image picture, String description, User user) {
         this.id = id;
         this.date = date;
         this.start = start;
         this.end = end;
         this.subject = subject;
         this.coffees = coffees;
-        this.image = image;
+        this.picture = picture;
         this.description = description;
         this.user = user;
     }
@@ -108,11 +108,11 @@ public class StudyActivity {
     }
 
     public Image getImage() {
-        return image;
+        return picture;
     }
 
     public void setImage(Image image) {
-        this.image = image;
+        this.picture = picture;
     }
 
     public String getDescription() {
