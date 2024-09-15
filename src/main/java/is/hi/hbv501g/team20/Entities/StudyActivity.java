@@ -13,7 +13,6 @@ public class StudyActivity {
     @Id
     @GeneratedValue
     private UUID id;
-    private String name;
     private String description;
 
     @Temporal(TemporalType.DATE)
