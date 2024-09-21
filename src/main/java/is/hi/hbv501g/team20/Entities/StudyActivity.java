@@ -42,12 +42,15 @@ public class StudyActivity {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "location_id")
+    private Location location;
+
     // Constructors
     public StudyActivity() {
     }
 
-    //bing bop
-    public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image picture, String description, User user) {
+    public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image picture, String description, User user, Location location) {
         this.id = id;
         this.date = date;
         this.start = start;
@@ -57,6 +60,7 @@ public class StudyActivity {
         this.picture = picture;
         this.description = description;
         this.user = user;
+        this.location = location;
     }
 
     // Getters and Setters
@@ -130,6 +134,14 @@ public class StudyActivity {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
 
