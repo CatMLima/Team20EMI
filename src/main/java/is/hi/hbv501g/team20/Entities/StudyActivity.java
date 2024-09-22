@@ -24,13 +24,13 @@ public class StudyActivity {
     @Temporal(TemporalType.TIME)
     private Time end;
 
-    @ManyToOne //Here the study activity is the Many and the subject is the One, one subject to many study activities
-    @JoinColumn(name = "subject_id")
-    private Subject subject;
+    //  @ManyToOne //Here the study activity is the Many and the subject is the One, one subject to many study activities
+    //@JoinColumn(name = "subject_id")
+    //private Subject subject;
 
     //Here the study activity is the One and the Many is coffees, one study activity has many coffees
-    @OneToMany(mappedBy = "studyActivity", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Coffee> coffees;
+    //@OneToMany(mappedBy = "studyActivity", cascade = CascadeType.ALL, orphanRemoval = true)
+    //private List<Coffee> coffees;
 
     //One study activity has one image
     @OneToOne(cascade = CascadeType.ALL)
@@ -42,25 +42,28 @@ public class StudyActivity {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "location_id")
-    private Location location;
+    //@OneToOne(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "location_id")
+    // private Location location;
 
     // Constructors
     public StudyActivity() {
     }
 
-    public StudyActivity(UUID id, Date date, Time start, Time end, Subject subject, List<Coffee> coffees, Image picture, String description, User user, Location location) {
+    public StudyActivity(UUID id, Date date, Time start, Time end, //Subject subject, List<Coffee> coffees,
+                         Image picture, String description, User user
+                         //, Location location
+    ) {
         this.id = id;
         this.date = date;
         this.start = start;
         this.end = end;
-        this.subject = subject;
-        this.coffees = coffees;
+        //  this.subject = subject;
+        //this.coffees = coffees;
         this.picture = picture;
         this.description = description;
         this.user = user;
-        this.location = location;
+        //this.location = location;
     }
 
     // Getters and Setters
@@ -96,21 +99,21 @@ public class StudyActivity {
         this.end = end;
     }
 
-    public Subject getSubject() {
-        return subject;
-    }
+//    public Subject getSubject() {
+    //      return subject;
+    //}
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
-    }
+    //public void setSubject(Subject subject) {
+    //  this.subject = subject;
+    //}
 
-    public List<Coffee> getCoffees() {
-        return coffees;
-    }
+    //public List<Coffee> getCoffees() {
+    //  return coffees;
+    //}
 
-    public void setCoffees(List<Coffee> coffees) {
-        this.coffees = coffees;
-    }
+    //public void setCoffees(List<Coffee> coffees) {
+    //  this.coffees = coffees;
+    //}
 
     public Image getImage() {
         return picture;
@@ -136,12 +139,12 @@ public class StudyActivity {
         this.user = user;
     }
 
-    public Location getLocation() {
-        return location;
-    }
+    //public Location getLocation() {
+    //  return location;
+    //}
 
-    public void setLocation(Location location) {
-        this.location = location;
-    }
+    //public void setLocation(Location location) {
+    //  this.location = location;
+    //}
 }
 
