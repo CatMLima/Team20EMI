@@ -35,10 +35,6 @@ build/
 ### Maven ###
 /target/
 
-### configuration files ###
-/src/main/resources/application.properties
-/src/main/resources/application.yml
-
 ### Logs ###
 *.log
 
